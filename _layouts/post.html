@@ -3,11 +3,40 @@
 <head>
   <meta charset="utf-8">
   <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+    .site-header {
+      margin-bottom: 30px;
+    }
+    .site-title a {
+      font-size: 2em;
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
 </head>
 <body>
-  <a href="/blog/">← Back to Blog</a>
-  <h1>{{ page.title }}</h1>
-  <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>
-  {{ content }}
+  <header class="site-header">
+    <div class="site-title">
+      <a href="/">First Principle Funds</a>
+    </div>
+  </header>
+
+  <article>
+    <h1>{{ page.title }}</h1>
+    <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>
+    {{ content }}
+  </article>
+
+  <footer>
+    <p><a href="/blog/">← Back to Blog</a></p>
+  </footer>
 </body>
 </html>
